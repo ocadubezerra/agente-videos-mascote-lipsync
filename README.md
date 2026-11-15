@@ -211,3 +211,13 @@ Feito por [**Cadu Bezerra**](https://github.com/ocadubezerra) · [@OCadubezerra]
 ## Autoria e uso da marca
 
 Mantido por [Cadu Bezerra](https://github.com/ocadubezerra). A licença existente continua aplicável; preserve os avisos exigidos em redistribuições. Consulte [RIGHTS.md](RIGHTS.md) para autoria, marcas e componentes de terceiros, e [SECURITY.md](SECURITY.md) para relatos privados.
+
+
+## Documentação do projeto
+
+- [Como contribuir](CONTRIBUTING.md)
+- [Código de conduta](CODE_OF_CONDUCT.md)
+- [Política de segurança](SECURITY.md)
+- [Autoria e uso da marca](RIGHTS.md)
+- [Procedência e avisos](NOTICE.md)
+- [Licença MIT](LICENSE)
