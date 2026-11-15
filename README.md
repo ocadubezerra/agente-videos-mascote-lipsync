@@ -6,7 +6,7 @@
 **com mascote ilustrado, lip sync fonético e legendas palavra a palavra.**
 
 [![Python 3.10+](https://img.shields.io/badge/Python-3.10+-3776AB?logo=python&logoColor=white)](https://www.python.org/)
-[![License: MIT](https://img.shields.io/badge/License-MIT-f4d43a.svg)](./LICENSE)
+[![Direitos reservados](https://img.shields.io/badge/licen%C3%A7a-direitos%20reservados-30343a)](./LICENSE)
 [![Claude Skill](https://img.shields.io/badge/Claude-Skill-blueviolet?logo=data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI+PHBhdGggZD0iTTEyIDJhMTAgMTAgMCAxIDAgMCAyMCAxMCAxMCAwIDAgMCAwLTIweiIgZmlsbD0iI2ZmZiIvPjwvc3ZnPg==)](./SKILL.md)
 
 <br>
@@ -72,7 +72,7 @@ agente-videos-mascote-lipsync/
 ├── SKILL.md              # Especificação completa para agentes de IA
 ├── README.md             # Este arquivo
 ├── requirements.txt      # Dependências Python
-├── LICENSE               # MIT
+├── LICENSE               # direitos reservados
 └── scripts/
     ├── recorta.py        # Remove fundo e calcula transparência
     ├── rosto.py          # Grade de medição, base sem boca e folha de conferência
@@ -195,7 +195,7 @@ Leia o arquivo SKILL.md deste repositório no seu assistente de código.
 
 ## 📄 Licença
 
-Distribuído sob a licença [MIT](./LICENSE).
+[Direitos reservados](./LICENSE) para esta versão; as licenças concedidas anteriormente continuam aplicáveis.
 
 ---
 
@@ -220,4 +220,4 @@ Mantido por [Cadu Bezerra](https://github.com/ocadubezerra). A licença existent
 - [Política de segurança](SECURITY.md)
 - [Autoria e uso da marca](RIGHTS.md)
 - [Procedência e avisos](NOTICE.md)
-- [Licença MIT](LICENSE)
+- [Reserva de direitos](LICENSE)
