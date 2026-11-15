@@ -120,6 +120,8 @@ export ELEVENLABS_API_KEY="sua-chave"    # ElevenLabs
 export VOICESTUDIO_URL="http://127.0.0.1:3900"  # VoiceStudio (local, grátis)
 ```
 
+Serviços de voz remotos exigem HTTPS. HTTP é permitido apenas em loopback local; redirecionamentos são recusados para evitar o reenvio de áudio ou chaves a outro destino.
+
 ---
 
 ## 🎙️ Provedores de Voz
