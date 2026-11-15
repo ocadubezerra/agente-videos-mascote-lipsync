@@ -1,8 +1,8 @@
 <div align="center">
 
-# 🎬 Agente de Vídeos Virais com Mascote & Lip Sync
+# 🎬 Vídeos com Mascote & Lip Sync
 
-**Pipeline open-source para criar vídeos verticais virais (Reels · TikTok · Shorts)**\
+**Pipeline open-source para criar vídeos verticais (Reels · TikTok · Shorts)**\
 **com mascote ilustrado, lip sync fonético e legendas palavra a palavra.**
 
 [![Python 3.10+](https://img.shields.io/badge/Python-3.10+-3776AB?logo=python&logoColor=white)](https://www.python.org/)
@@ -17,14 +17,14 @@
 
 ### O que ele faz
 
-Transforma uma ideia ou vídeo viral de referência em um **vídeo vertical pronto para postar** com o seu próprio mascote ilustrado — 1080×1920 a 30 fps, com boca sincronizada, voz humana e legenda automática.
+Transforma uma ideia ou vídeo viral de referência em um **vídeo vertical pronto para postar** com o seu próprio mascote ilustrado — 1080×1920 a 30 fps, com boca sincronizada, voz sintetizada e legenda automática.
 
 </td>
 <td width="50%">
 
 ### Para quem é
 
-Criadores de conteúdo, agências e devs que querem **escalar produção de vídeo curto** sem editor de vídeo, sem locução manual e sem mensalidade de ferramenta de animação.
+Criadores de conteúdo, agências e devs que querem **escalar produção de vídeo curto** sem editor de vídeo, sem locução manual e com controle sobre a montagem e a renderização.
 
 </td>
 </tr>
@@ -39,7 +39,7 @@ Criadores de conteúdo, agências e devs que querem **escalar produção de víd
 | Recurso | Detalhe |
 |---|---|
 | **9 Poses Expressivas** | Geradas via [Nano Banana](https://www.nanobanana.com/) com fundo liso e consistência de personagem |
-| **Voz 100% Humana** | Síntese contínua em chamada única — sem pausas robóticas entre frases |
+| **Síntese de voz** | Síntese contínua em chamada única — sem pausas robóticas entre frases |
 | **Lip Sync Fonético** | [Rhubarb](https://github.com/DanielSWolf/rhubarb-lip-sync) mapeia 9 formas de boca vetoriais (A–H + X) que acompanham cada fonema |
 | **Boca Fecha no Silêncio** | Algoritmo que detecta pausas de áudio e garante zero bocas abertas no silêncio |
 | **Legendas Dinâmicas** | Sincronizadas palavra por palavra, com destaque de cor e zoom de câmera na ênfase |
@@ -98,7 +98,7 @@ agente-videos-mascote-lipsync/
 
 ```bash
 # 1. Clone o repositório
-git clone https://github.com/cadubezerrapro/agente-videos-mascote-lipsync.git
+git clone https://github.com/ocadubezerra/agente-videos-mascote-lipsync.git
 cd agente-videos-mascote-lipsync
 
 # 2. Instale as dependências Python
@@ -128,7 +128,7 @@ export VOICESTUDIO_URL="http://127.0.0.1:3900"  # VoiceStudio (local, grátis)
 |---|---|---|---|
 | **[Fish Audio](https://fish.audio/)** | API nuvem | `FISH_API_KEY` | PT-BR natural, Voice Design e clonagem rápida |
 | **[ElevenLabs](https://elevenlabs.io/)** | API nuvem | `ELEVENLABS_API_KEY` | Máxima expressividade e timestamps por palavra |
-| **VoiceStudio** | Local | `VOICESTUDIO_URL` | 100% gratuito, sem limite de uso, offline |
+| **VoiceStudio** | Local | `VOICESTUDIO_URL` | Execução local; depende dos recursos e da configuração do ambiente |
 
 ---
 
@@ -185,10 +185,10 @@ Ao carregar o projeto, o agente já sabe:
 3. ✅ Gerar áudio e inspecionar a conformidade fonética do lip sync
 4. ✅ Rodar o checklist de qualidade antes da entrega final
 
-**Instalar a skill no Claude:**
+**Carregar as instruções no assistente:**
 
 ```
-/plugin install agente-videos-mascote-lipsync@cadubezerrapro
+Leia o arquivo SKILL.md deste repositório no seu assistente de código.
 ```
 
 ---
@@ -201,8 +201,13 @@ Distribuído sob a licença [MIT](./LICENSE).
 
 <div align="center">
 
-Feito por [**Cadu Bezerra**](https://github.com/cadubezerrapro) · [@OCadubezerra](https://instagram.com/OCadubezerra)
+Feito por [**Cadu Bezerra**](https://github.com/ocadubezerra) · [@OCadubezerra](https://instagram.com/OCadubezerra)
 
 [ia_thefuture](https://ia-thefuture.vercel.app) · [ZuckPay](https://zuckpay.com.br)
 
 </div>
+
+
+## Autoria e uso da marca
+
+Mantido por [Cadu Bezerra](https://github.com/ocadubezerra). A licença existente continua aplicável; preserve os avisos exigidos em redistribuições. Consulte [RIGHTS.md](RIGHTS.md) para autoria, marcas e componentes de terceiros, e [SECURITY.md](SECURITY.md) para relatos privados.
