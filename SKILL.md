@@ -522,7 +522,7 @@ CLI:
   python3 vozes.py desenhar "descrição da voz" pasta/ --n 3     Voice Design (Fish Audio)
   python3 vozes.py salvar "Nome" amostra1.wav [amostra2.wav]   clona/salva voz na Fish Audio
 """
-import json, os, sys, uuid, base64, subprocess, urllib.request, urllib.parse
+import json, os, sys, uuid, base64, subprocess, urllib.request, urllib.parse, ipaddress
 
 FISH = "https://api.fish.audio"
 ELEVEN = os.environ.get("ELEVENLABS_URL", "https://api.elevenlabs.io")
@@ -530,13 +530,37 @@ VSTUDIO = os.environ.get("VOICESTUDIO_URL", "http://127.0.0.1:3900")
 
 
 # ---------- HTTP ----------
+class _SemRedirecionamento(urllib.request.HTTPRedirectHandler):
+    def redirect_request(self, req, fp, code, msg, headers, newurl):
+        # Redirecionar poderia entregar chaves ou áudio a outro destino.
+        return None
+
+
+def _validar_destino(url):
+    destino = urllib.parse.urlsplit(url)
+    if destino.scheme not in ("https", "http") or not destino.hostname:
+        raise ValueError("A URL do serviço de voz deve usar HTTP ou HTTPS")
+    if destino.username is not None or destino.password is not None:
+        raise ValueError("Não inclua credenciais na URL do serviço de voz")
+    local = destino.hostname.lower() == "localhost"
+    if not local:
+        try:
+            local = ipaddress.ip_address(destino.hostname).is_loopback
+        except ValueError:
+            pass
+    if destino.scheme != "https" and not local:
+        raise ValueError("O serviço de voz remoto exige HTTPS")
+
+
 def _req(url, body=None, headers=None, method=None, timeout=300):
+    _validar_destino(url)
     data = json.dumps(body).encode() if isinstance(body, (dict, list)) else body
     h = dict(headers or {})
     if isinstance(body, (dict, list)):
         h["Content-Type"] = "application/json"
     r = urllib.request.Request(url, data=data, headers=h, method=method or ("POST" if data else "GET"))
-    with urllib.request.urlopen(r, timeout=timeout) as resp:
+    opener = urllib.request.build_opener(_SemRedirecionamento())
+    with opener.open(r, timeout=timeout) as resp:
         return resp.read()
 
 
